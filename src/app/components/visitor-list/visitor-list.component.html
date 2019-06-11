@@ -1,0 +1,46 @@
+<section class="container">
+	<section class="content">
+		<div class="choose-date">
+			<mat-form-field>
+			  <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="dateS">
+			  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			  <mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+			<button mat-stroked-button (click)="myChange()">Submit</button>
+		</div>
+		<div class="choose-date">
+			<mat-form-field>
+			  <input matInput placeholder="Enter Vehical Number" #vn>
+			</mat-form-field>
+			<button mat-stroked-button (click)="myChange1(vn.value)">Submit</button>
+		</div>
+		<table border="1">
+			<tr>
+				<th>Id</th>
+				<!-- <th>Visit Date</th> -->
+				<th>Card Number</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Mobile Number</th>
+				<th>Number Plate</th>
+				<th>Destination</th>
+				<th>Purpose</th>
+				<th>In time</th>
+				<th>Out time</th>
+			</tr>
+			<tr *ngFor="let visitor of visitors">
+				<td>{{visitor[0]}}</td>
+				<!-- <td>{{visitor[1]}}</td> -->
+				<td>{{visitor[2]}}</td>
+				<td>{{visitor[3]}}</td>
+				<td>{{visitor[4]}}</td>
+				<td>{{visitor[5]}}</td>
+				<td>{{visitor[6]}}</td>
+				<td>{{visitor[7]}}</td>
+				<td>{{visitor[8]}}</td>
+				<td>{{visitor[9]}}</td>
+				<td>{{visitor[10]}}</td>
+			</tr>
+		</table>
+	</section>
+</section>

@@ -1,0 +1,56 @@
+<section class="container">
+	<section class="content">
+		<form [formGroup]="visitorForm" (ngSubmit)="onSubmit()">
+			<mat-form-field>
+				<input matInput placeholder="Number Plate" formControlName="number_plate" (focusout)="myFocusout()">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Card Number" formControlName="card_number">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Name" formControlName="name">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Mobile Number" formControlName="mobile">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Address" formControlName="address">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Destination" formControlName="destination">
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput placeholder="Purpose of visit" formControlName="purpose">
+			</mat-form-field>
+			<div class="date-time-picker">
+				<mat-form-field class="date-picker">
+				  <input matInput [matDatepicker]="picker1" placeholder="In Date and time" formControlName="dateI">
+				  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+				  <mat-datepicker #picker1></mat-datepicker>
+				</mat-form-field>
+				<div class="time-picker">
+					<span>Hours</span><input type="number" placeholder="Hours" formControlName="timeIH">
+					<span>:</span>
+					<span>Minutes</span><input type="number" placeholder="Minutes" formControlName="timeIM">
+				</div>
+			</div>
+
+			<div class="date-time-picker">
+				<mat-form-field class="date-picker">
+				  <input matInput [matDatepicker]="picker" placeholder="Out Date and time" formControlName="dateI">
+				  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				  <mat-datepicker #picker></mat-datepicker>
+				</mat-form-field>
+				<div class="time-picker">
+					<span>Hours</span><input type="number" placeholder="Hours" formControlName="timeOH">
+					<span>:</span>
+					<span>Minutes</span><input type="number" placeholder="Minutes" formControlName="timeOM">
+				</div>
+			</div>
+			<div>
+				<button mat-stroked-button>Submit</button>
+			</div>
+			<div><br><br><br></div>
+		</form>
+	</section>
+</section>
