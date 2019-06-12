@@ -73,6 +73,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+import { AuthGuardService } from './services/auth-guard.service';
+
 
 
 
@@ -85,6 +87,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent, MessageDialog } from './components/login/login.component';
 import { VisitorListComponent } from './components/visitor-list/visitor-list.component';
 import { VisitorCreateComponent } from './components/visitor-create/visitor-create.component';
+import { VisitorEditComponent } from './components/visitor-edit/visitor-edit.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +99,7 @@ import { VisitorCreateComponent } from './components/visitor-create/visitor-crea
     MessageDialog,
     VisitorListComponent,
     VisitorCreateComponent,
+    VisitorEditComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -146,7 +150,7 @@ import { VisitorCreateComponent } from './components/visitor-create/visitor-crea
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [CookieService,],
+  providers: [CookieService, AuthGuardService],
   entryComponents: [MessageDialog,]
 })
 export class AppModule { }

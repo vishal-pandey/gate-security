@@ -108,6 +108,25 @@ export class MainService {
     return this.http.post(this.apiUrl+"visitor/?access_token="+this.cookie.get('access_token'), tosend);
   }
 
+  updateVisitor(card_number,name,address,mobile,number_plate,destination,purpose,outtime,intime, id){
+    let tosend = new FormData();
+    tosend.append("card_number", card_number);
+    tosend.append("name", name);
+    tosend.append("address", address);
+    tosend.append("mobile", mobile);
+    tosend.append("number_plate", number_plate);
+    tosend.append("destination", destination);
+    tosend.append("purpose", purpose);
+    tosend.append("outtime", outtime);
+    tosend.append("intime", intime);
+    return this.http.put(this.apiUrl+"visitor-detail/"+id+"/?access_token="+this.cookie.get('access_token'), tosend);
+  }
+
+
+
+  visitorEditDetail(id){
+    return this.http.get(this.apiUrl+"visitor-detail/"+id+"/?access_token="+this.cookie.get('access_token'));
+  }
 
   testService(){
   	console.log("Test SuccessFul");

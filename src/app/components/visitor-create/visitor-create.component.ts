@@ -34,12 +34,11 @@ export class VisitorCreateComponent implements OnInit {
   	destination: new FormControl(""),
   	purpose: new FormControl(""),
   	dateI: new FormControl(new Date()),
-	dateO: new FormControl(new Date()),
-	timeIH: new FormControl(new Date().getHours()),
-	timeIM: new FormControl(new Date().getMinutes()),
-	timeOH: new FormControl(new Date().getHours()),
-	timeOM: new FormControl(new Date().getMinutes()),
-
+  	dateO: new FormControl(new Date()),
+  	timeIH: new FormControl(new Date().getHours()),
+  	timeIM: new FormControl(new Date().getMinutes()),
+  	timeOH: new FormControl(new Date().getHours()),
+  	timeOM: new FormControl(new Date().getMinutes()),
   })
 
   ngOnInit() {
@@ -57,8 +56,8 @@ export class VisitorCreateComponent implements OnInit {
   	let timeOH = this.visitorForm.get('timeOH').value.toString().length < 2 ? "0"+this.visitorForm.get('timeOH').value:this.visitorForm.get('timeOH').value;
   	let timeOM = this.visitorForm.get('timeOM').value.toString().length < 2 ? "0"+this.visitorForm.get('timeOM').value:this.visitorForm.get('timeOM').value;
 
-  	let InTime = this.mS.getDate(this.visitorForm.get('dateI').value)+"T"+timeIH+":"+timeIM;
-  	let OutTime = this.mS.getDate(this.visitorForm.get('dateO').value)+"T"+timeOH+":"+timeOM;
+  	let InTime = this.mS.getDate(this.visitorForm.get('dateI').value)+"T"+timeIH+":"+timeIM+"Z";
+  	let OutTime = this.mS.getDate(this.visitorForm.get('dateO').value)+"T"+timeOH+":"+timeOM+"Z";
   	
   	console.log(InTime);
   	console.log(OutTime);
@@ -71,8 +70,8 @@ export class VisitorCreateComponent implements OnInit {
   	let number_plate = this.visitorForm.get('number_plate').value;
   	let destination = this.visitorForm.get('destination').value;
   	let purpose = this.visitorForm.get('purpose').value;
-  	let outtime = InTime;
-  	let intime = OutTime;
+  	let outtime = OutTime;
+  	let intime = InTime;
 
   	this.mS.addVisitor(card_number,name,address,mobile,number_plate,destination,purpose,outtime,intime).subscribe((r:any)=>{
   		console.log(r);

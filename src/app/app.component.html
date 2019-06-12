@@ -19,7 +19,7 @@
 	    		<button mat-button routerLink="/"> <mat-icon>home</mat-icon> Home <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
 				<button mat-button  routerLink="/visitor-list"> <mat-icon>directions_bus</mat-icon>Visitor List <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
 				<button mat-button  routerLink="/visitor-create"> <mat-icon>airport_shuttle</mat-icon> Create <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
-				<button mat-button  routerLink="/update"> <mat-icon>local_shipping</mat-icon> Update/Delete <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
+				<button mat-button  routerLink="/visitor-edit"> <mat-icon>local_shipping</mat-icon> Update <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
 				<!-- <button mat-button  routerLink="/oems">OEMs <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button> -->
 				
 				<button mat-button (click)="this.mS.logout();" *ngIf="this.mS.isLoggedIn()"> <mat-icon>power_settings_new</mat-icon> Logout <mat-icon style="float: right;margin-top: 5px;">chevron_right</mat-icon></button>
@@ -54,7 +54,7 @@
 	    		<button mat-button routerLink="/" (click)="sidenav.toggle()">Home</button>
 				<button mat-button (click)="sidenav.toggle();" routerLink="/visitor-list">Visitor List</button>
 				<button mat-button (click)="sidenav.toggle();" routerLink="/visitor-create">Create</button>
-				<button mat-button (click)="sidenav.toggle();" routerLink="/list">Update/Delete</button>
+				<button mat-button (click)="sidenav.toggle();" routerLink="/visitor-edit">Update/Delete</button>
 				<button mat-button (click)="this.mS.logout(); sidenav.toggle();" *ngIf="this.mS.isLoggedIn()">Logout</button>
 				<button mat-button (click)="sidenav.toggle();" *ngIf="!this.mS.isLoggedIn()" routerLink="/">Login</button>
 	    	</section>

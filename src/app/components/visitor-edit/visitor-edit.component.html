@@ -1,8 +1,8 @@
 <section class="container">
-	<section class="content">
+	<section class="content" *ngIf="!isUpdate">
 		<form [formGroup]="visitorForm" (ngSubmit)="onSubmit()">
 			<mat-form-field>
-				<input matInput placeholder="Number Plate" formControlName="number_plate" (focusout)="myFocusout()">
+				<input matInput placeholder="Number Plate" formControlName="number_plate">
 			</mat-form-field>
 			<mat-form-field>
 				<input matInput placeholder="Card Number" formControlName="card_number">
@@ -52,5 +52,13 @@
 			</div>
 			<div><br><br><br></div>
 		</form>
+	</section>
+	<section class="content" *ngIf="isUpdate">
+		<section class="navigate-edit">
+			<mat-form-field>
+				<input matInput placeholder="Enter ID to Update" #id>
+			</mat-form-field>
+			<button mat-stroked-button (click)="navigateToEdit(id.value)">Submit</button>
+		</section>
 	</section>
 </section>

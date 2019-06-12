@@ -27,6 +27,7 @@
 				<th>Purpose</th>
 				<th>In time</th>
 				<th>Out time</th>
+				<th>Edit</th>
 			</tr>
 			<tr *ngFor="let visitor of visitors">
 				<td>{{visitor[0]}}</td>
@@ -40,6 +41,7 @@
 				<td>{{visitor[8]}}</td>
 				<td>{{visitor[9]}}</td>
 				<td>{{visitor[10]}}</td>
+				<td><a routerLink="/visitor-edit/{{visitor[0]}}">edit</a></td>
 			</tr>
 		</table>
 	</section>

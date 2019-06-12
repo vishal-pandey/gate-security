@@ -8,6 +8,7 @@
 	justify-content: center;
 	flex-direction: column;
 	z-index: 1000;
+	display: none;
 }
 
 .social-mobile{
@@ -19,6 +20,7 @@
 	align-items: center;
 	justify-content: center;
 	z-index: 100000;
+	display: none;
 }
 
 .desktop-sidenav{
